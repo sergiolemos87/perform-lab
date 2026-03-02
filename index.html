@@ -482,7 +482,11 @@ header.scrolled .logo img{
             overflow: hidden;
             position: relative;
         }
-
+.about-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
         /* FAQ Accordion */
         .faq-container {
             max-width: 800px;
@@ -828,13 +832,8 @@ header.scrolled .logo img{
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image">
-                        <!-- Placeholder visual elegante para la foto de Sergio -->
-                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--border-color)" stroke-width="1">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                        <div style="position: absolute; bottom: 1rem; text-align: center; width: 100%; color: var(--text-muted); font-size: 0.8rem;">Sergio - PERFORM LAB</div>
-                    </div>
+    <img src="assets/sergio.jpg" alt="Sergio - Entrenador PERFORM LAB">
+</div>
                     <div class="about-content">
                         <span class="hero-subtitle">El Entrenador</span>
                         <h2>Soy Sergio.</h2>
@@ -896,7 +895,7 @@ header.scrolled .logo img{
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <img src="assets/logo3.png" alt="PERFORM LAB" style="height: 250px; filter: width: auto; margin-bottom: 1.5rem;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="assets/logo3.png" alt="PERFORM LAB" style="height: 250px; width: auto; margin-bottom: 1.5rem;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <h3 style="display:none; color: #fff; margin-bottom: 1.5rem;">PERFORM LAB</h3>
                     <p>Fuerza, estética y longevidad en un solo plan. Entrenamiento basado en evidencia científica.</p>
                 </div>
