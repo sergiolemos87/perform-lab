@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFORM LAB | Fuerza, estética y longevidad</title>
+    <meta name="description" content="Entrenamiento personal basado en evidencia científica. Fuerza, estética y longevidad en un solo plan con Sergio, entrenador especializado en biomecánica.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PERFORM LAB | Entrenamiento Personal Premium">
+    <meta property="og:description" content="Fuerza, estética y longevidad en un solo plan. Entrenamiento basado en evidencia científica en Alicante y Online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tu-dominio.github.io/">
+    <meta property="og:image" content="assets/logo.png">
+
+    <!-- JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "PERFORM LAB",
+      "image": "assets/logo.png",
+      "description": "Servicios de entrenamiento personal basados en evidencia científica. Especialista en biomecánica, fuerza, hipertrofia y longevidad.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alicante",
+        "addressCountry": "ES"
+      },
+      "telephone": "+34632216120",
+      "email": "slperformlab@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Sergio"
+      }
+    }
+    </script>
+
+    <style>
+        /* Variables CSS */
+        :root {
+            --bg-base: #0a0a0a;
+            --bg-surface: #141414;
+            --bg-surface-hover: #1f1f1f;
+            --accent-primary: #ff4e00;
+            --accent-hover: #ff6a2b;
+            --text-main: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(20, 20, 20, 0.7);
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --transition: all 0.3s ease;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); margin-bottom: 1rem; }
+        
+        p { margin-bottom: 1rem; color: var(--text-muted); }
+        
+        .text-accent { color: var(--accent-primary); }
+        .text-center { text-align: center; }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        header.scrolled {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            filter: invert(1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 1.75rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(255, 78, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 78, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-surface);
+            border-color: var(--text-muted);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 5rem;
+            background: radial-gradient(circle at 50% 0%, rgba(255,78,0,0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        /* Interactive Toggle */
+        .focus-toggle {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            display: inline-flex;
+            padding: 0.25rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .focus-toggle button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .focus-toggle button.active {
+            background: var(--accent-primary);
+            color: #fff;
+        }
+
+        .focus-description {
+            min-height: 3rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            max-width: 600px;
+            margin: 0 auto;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Método Section */
+        .metodo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .metodo-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metodo-visual {
+            position: relative;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, var(--bg-surface), var(--bg-base));
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1;
+        }
+
+        .metodo-visual::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--accent-primary);
+            filter: blur(80px);
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+
+        /* Diferenciación */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .diff-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .diff-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            background: var(--bg-surface-hover);
+        }
+
+        .diff-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 78, 0, 0.1);
+            color: var(--accent-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 1rem 0 1.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.25rem;
+        }
+
+        .service-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .service-features {
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .service-features svg {
+            flex-shrink: 0;
+            color: var(--accent-primary);
+            margin-top: 0.2rem;
+        }
+
+        .table-packs {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .table-packs th, .table-packs td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Pasos */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        /* Sobre Mí */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--bg-surface);
+            padding: 4rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .about-image {
+            aspect-ratio: 3/4;
+            background: var(--bg-base);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* FAQ Accordion */
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-answer-content {
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer / Contacto */
+        footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .contact-item svg {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ebe57;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-ctas { flex-direction: column; }
+            .metodo-grid, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-grid { padding: 2rem; }
+            section { padding: 4rem 0; }
+            .step-item { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="PERFORM LAB Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;">PERFORM LAB</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#metodo">El Método</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">Entrenamiento Personal Premium</span>
+                    <h1>Fuerza, estética y longevidad en un solo plan.</h1>
+                    
+                    <div class="focus-toggle" id="focusToggle">
+                        <button class="active" data-target="fuerza">Fuerza</button>
+                        <button data-target="estetica">Estética</button>
+                        <button data-target="longevidad">Longevidad</button>
+                    </div>
+                    
+                    <p class="focus-description" id="focusDescription">
+                        Desarrolla una base sólida. Mejora tu rendimiento, levanta más peso y construye un cuerpo capaz de superar cualquier desafío físico con programación estructurada.
+                    </p>
+
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20estoy%20listo%20para%20empezar%20a%20entrenar%20contigo." target="_blank" class="btn btn-primary">
+                            Contratar servicio
+                        </a>
+                        <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios." target="_blank" class="btn btn-secondary">
+                            Quiero más información
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Método Section -->
+        <section id="metodo">
+            <div class="container">
+                <div class="metodo-grid">
+                    <div class="metodo-text">
+                        <span class="hero-subtitle">Filosofía de trabajo</span>
+                        <h2>Entrenar no es solo moverse, es moverse bien.</h2>
+                        <p>El entrenamiento efectivo no consiste en seguir una rutina genérica, dejarse llevar por modas o realizar ejercicios complicados y sesiones interminables. Se trata de aplicar un enfoque estructurado y personalizado basado en principios científicos.</p>
+                        <p>Mi enfoque se centra en la <strong>biomecánica</strong> y en los métodos más actualizados respaldados por evidencia. Aplicamos principios que no solo persiguen objetivos estéticos y de rendimiento, sino que promueven la salud integral.</p>
+                        <p>El movimiento es un pilar fundamental. Un cuerpo fuerte y funcional reduce el riesgo de lesiones, previene enfermedades metabólicas y permite disfrutar de una calidad de vida superior.</p>
+                    </div>
+                    <div class="metodo-visual">
+                        <!-- Representación abstracta del método (SVG inline) -->
+                        <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Órbitas (Ciencia/Lab) -->
+                            <ellipse cx="120" cy="120" rx="100" ry="35" transform="rotate(30 120 120)" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="6 6" opacity="0.4"/>
+                            <ellipse cx="120" cy="120" rx="100" ry="35" transform="rotate(-30 120 120)" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="6 6" opacity="0.4"/>
+                            
+                            <!-- Mancuerna (Fuerza/Perform) -->
+                            <g transform="rotate(-45 120 120)">
+                                <!-- Agarre -->
+                                <rect x="80" y="112" width="80" height="16" rx="4" fill="var(--bg-base)" stroke="var(--accent-primary)" stroke-width="3"/>
+                                <!-- Pesos Izquierda -->
+                                <rect x="60" y="90" width="20" height="60" rx="6" fill="var(--accent-primary)"/>
+                                <rect x="45" y="100" width="12" height="40" rx="4" fill="var(--accent-primary)" opacity="0.8"/>
+                                <!-- Pesos Derecha -->
+                                <rect x="160" y="90" width="20" height="60" rx="6" fill="var(--accent-primary)"/>
+                                <rect x="183" y="100" width="12" height="40" rx="4" fill="var(--accent-primary)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Núcleo central -->
+                            <circle cx="120" cy="120" r="8" fill="var(--bg-base)" stroke="var(--accent-primary)" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Diferenciación -->
+                <div class="diff-grid">
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>
+                        </div>
+                        <h3>Evidencia Científica</h3>
+                        <p>Programación basada estrictamente en la ciencia actual, sin mitos ni modas pasajeras.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <h3>Adaptación Total</h3>
+                        <p>Entrenamiento ajustado milimétricamente a tu nivel actual, contexto y objetivos específicos.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Prevención y Técnica</h3>
+                        <p>Foco absoluto en la biomecánica para mejorar la ejecución y mantenerte libre de lesiones.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3>Seguimiento Estratégico</h3>
+                        <p>Análisis constante de tu progreso para optimizar variables y garantizar resultados reales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios" style="background: var(--bg-surface-hover);">
+            <div class="container">
+                <div class="text-center">
+                    <span class="hero-subtitle">Planes de Entrenamiento</span>
+                    <h2>Servicios a tu medida</h2>
+                    <p style="max-width: 600px; margin: 0 auto;">Elige el formato que mejor se adapte a tu estilo de vida y compromiso.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Card 1 -->
+                    <div class="service-card">
+                        <h3>Asesoramiento Online</h3>
+                        <div class="service-price">70 €<span>/mes</span></div>
+                        <ul class="service-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Plan de entrenamiento personalizado y adaptable.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Seguimiento semanal (técnica, intensidad, progresión).</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Cálculo de macronutrientes según objetivo.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Soporte por mensajería para dudas.</li>
+                        </ul>
+                        <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20me%20interesa%20el%20Asesoramiento%20Online%20(70%E2%82%AC/mes)." target="_blank" class="btn btn-secondary" style="width: 100%;">Contratar Online</a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="service-card" style="border-color: var(--accent-primary);">
+                        <div style="position: absolute; top: 0; right: 0; background: var(--accent-primary); color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 1rem; border-bottom-left-radius: 12px;">MÁS COMPLETO</div>
+                        <h3>Online + Presencial</h3>
+                        <div class="service-price">55 €<span>/mes + sesiones</span></div>
+                        <ul class="service-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Todo lo incluido en el Asesoramiento Online.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Sesiones presenciales para perfeccionar técnica.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> En gimnasio, domicilio o salas de reserva.</li>
+                            <li>
+                                <table class="table-packs">
+                                    <tr><th>Packs</th><th>Precio/sesión</th></tr>
+                                    <tr><td>4 sesiones</td><td>40 €</td></tr>
+                                    <tr><td>8 sesiones</td><td>37 €</td></tr>
+                                    <tr><td>12 sesiones</td><td>34 €</td></tr>
+                                    <tr><td>16 sesiones</td><td>30 €</td></tr>
+                                </table>
+                                <div style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">* +50% costo de sala o gimnasio</div>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20me%20interesa%20el%20Asesoramiento%20Online%20+%20Sesiones%20Presenciales." target="_blank" class="btn btn-primary" style="width: 100%;">Contratar Híbrido</a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="service-card">
+                        <h3>Programación Sin Seguimiento</h3>
+                        <div class="service-price">60 €<span>/ 3 meses</span></div>
+                        <ul class="service-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rutina estructurada según objetivos y capacidades.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Plantilla de registro para apuntar tus marcas.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Resolución de dudas en la entrega.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Ejemplos en video de los ejercicios.</li>
+                        </ul>
+                        <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20me%20interesa%20la%20Programaci%C3%B3n%20de%20Entrenamiento%20Sin%20Seguimiento." target="_blank" class="btn btn-secondary" style="width: 100%;">Solicitar Rutina</a>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="service-card">
+                        <h3>Presencial Ocasional</h3>
+                        <div class="service-price">45 €<span>/sesión</span></div>
+                        <ul class="service-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Sesión puntual de perfeccionamiento técnico.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Ajuste de rutina en persona.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Resolución de dudas específicas.</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Disponible para clientes con cualquier servicio.</li>
+                            <li style="font-size: 0.75rem; margin-top: 1rem;">* +70% costo de sala o gimnasio</li>
+                        </ul>
+                        <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20me%20interesa%20una%20Sesi%C3%B3n%20de%20Entrenamiento%20Presencial%20Ocasional." target="_blank" class="btn btn-secondary" style="width: 100%;">Reservar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Empezar -->
+        <section id="como-empezar">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Cómo empezar</h2>
+                    <p>Un proceso simple diseñado para entender tu punto de partida y trazar la ruta exacta hacia tu objetivo.</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div>
+                            <h3>Contacto Inicial</h3>
+                            <p>Escríbeme por WhatsApp o email indicando qué servicio te interesa o cuáles son tus objetivos principales.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div>
+                            <h3>Evaluación y Contexto</h3>
+                            <p>Analizaremos tu punto de partida, historial deportivo, disponibilidad y posibles limitaciones para adaptar el plan al 100%.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div>
+                            <h3>Plan de Acción</h3>
+                            <p>Recibirás tu programación estructurada y comenzaremos a trabajar juntos con seguimiento continuo para asegurar resultados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mí -->
+        <section id="sobre-mi" style="background: var(--bg-surface-hover);">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <!-- Placeholder visual elegante para la foto de Sergio -->
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--border-color)" stroke-width="1">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <div style="position: absolute; bottom: 1rem; text-align: center; width: 100%; color: var(--text-muted); font-size: 0.8rem;">Sergio - PERFORM LAB</div>
+                    </div>
+                    <div class="about-content">
+                        <span class="hero-subtitle">El Entrenador</span>
+                        <h2>Soy Sergio.</h2>
+                        <p>Entrenador personal certificado con <strong>más de 7 años de experiencia</strong> impartiendo sesiones grupales e individuales. Estoy especializado en biomecánica, entrenamiento de fuerza, hipertrofia y entrenamiento híbrido.</p>
+                        <p>Mi objetivo es que entrenemos juntos de manera inteligente, asegurando que cada sesión te acerque a tus metas de forma segura y eficiente.</p>
+                        <p>Voy a guiarte en cada paso del proceso, ayudándote a mejorar tu técnica, evitar lesiones y sacarle el máximo provecho a tu entrenamiento para que te sientas, te veas y rindas mejor. Haciendo que tu tiempo y tu esfuerzo realmente valgan y te lleven a donde quieres estar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Preguntas Frecuentes</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Cómo funciona el seguimiento semanal en el Asesoramiento Online?
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Cada semana revisaremos tus métricas, sensaciones y videos de ejecución técnica. En base a esto, realizaremos ajustes estratégicos en la intensidad, volumen y progresión para asegurar que sigues avanzando sin estancamientos ni riesgo de lesión.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Dónde se realizan las sesiones presenciales?
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Las sesiones presenciales se realizan en Alicante. Podemos llevarlas a cabo en tu gimnasio habitual, a domicilio o en salas de entrenamiento de reserva, adaptándonos a tu comodidad (aplican suplementos según el costo de la sala).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿El plan incluye dieta estricta?
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                No prescribo dietas cerradas. Realizo un cálculo de macronutrientes adaptado a tu objetivo específico (hipertrofia, pérdida de grasa, recomposición) para que aprendas a gestionar tu alimentación de forma flexible y sostenible a largo plazo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/logo.png" alt="PERFORM LAB" style="height: 40px; filter: invert(1); margin-bottom: 1.5rem;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h3 style="display:none; color: #fff; margin-bottom: 1.5rem;">PERFORM LAB</h3>
+                    <p>Fuerza, estética y longevidad en un solo plan. Entrenamiento basado en evidencia científica.</p>
+                </div>
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem;">Contacto</h3>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:slperformlab@gmail.com">slperformlab@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <a href="tel:+34632216120">+34 632 216 120</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Alicante, España</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> PERFORM LAB. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34632216120?text=Hola%20Sergio,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios." target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Sticky Header
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hero Toggle Logic
+        const toggleButtons = document.querySelectorAll('#focusToggle button');
+        const descriptionEl = document.getElementById('focusDescription');
+        
+        const descriptions = {
+            fuerza: "Desarrolla una base sólida. Mejora tu rendimiento, levanta más peso y construye un cuerpo capaz de superar cualquier desafío físico con programación estructurada.",
+            estetica: "Optimiza tu composición corporal. Pierde grasa y gana masa muscular con un enfoque científico que maximiza tus resultados visuales sin dietas extremas.",
+            longevidad: "Entrena para la vida. Previene lesiones, mejora tu movilidad y asegura una salud metabólica y articular óptima para disfrutar de un cuerpo funcional a largo plazo."
+        };
+
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                toggleButtons.forEach(b => b.classList.remove('active'));
+                // Add active to clicked
+                btn.classList.add('active');
+                
+                // Animate text change
+                descriptionEl.style.opacity = 0;
+                setTimeout(() => {
+                    descriptionEl.textContent = descriptions[btn.dataset.target];
+                    descriptionEl.style.opacity = 1;
+                }, 300);
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-question');
+        
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                const answer = item.nextElementSibling;
+                const isExpanded = item.getAttribute('aria-expanded') === 'true';
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== parent) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current
+                if (isExpanded) {
+                    item.setAttribute('aria-expanded', 'false');
+                    parent.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    item.setAttribute('aria-expanded', 'true');
+                    parent.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
