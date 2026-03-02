@@ -150,11 +150,18 @@
             gap: 0.5rem;
         }
 
-        .logo img {
-            height: 100px;
-            width: auto;
-            filter: invert(1);
-        }
+        /* Logo: grande al inicio, compacto al hacer scroll */
+header .logo img{
+    height: 72px;      /* tamaño normal (sin scroll) */
+    width: auto;
+    filter: invert(1);
+    transition: var(--transition);
+}
+
+/* Al hacer scroll, el header se compacta y el logo también */
+header.scrolled .logo img{
+    height: 44px;
+}
 
         .nav-links {
             display: flex;
